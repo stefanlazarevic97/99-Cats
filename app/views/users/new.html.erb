@@ -1,0 +1,23 @@
+<section class="page"><div class="centered-box">
+    <h1>Sign Up</h1>
+    
+    <%= render "shared/errors" %>
+
+    <form action="<%= users_url %>" method="POST">
+        <input
+            type="hidden"
+            name="authenticity_token"
+            value="<%= form_authenticity_token %>"
+        >
+
+        <label for="username">Username: </label>
+        <input id="username" type="text" name="user[username]" value="<%= @user.username %>">
+        <br>
+
+        <label for="password">Password: </label>
+        <input id="password" type="password" name="user[password]" value="<%= @user.password %>">
+        <br>
+
+        <input type="submit" value="Sign Up!"/>
+    </form>
+</div></section>
